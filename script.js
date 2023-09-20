@@ -1,3 +1,5 @@
+// Sphère du curseur
+
 let sphere = document.querySelector(".circle");
 //Detect touch device
 function isTouchDevice() {
@@ -11,13 +13,8 @@ function isTouchDevice() {
 }
 
 const move = (e) => {
-      //Try, catch to avoid any errors for touch screens (Error thrown when user doesn't move his finger)
-      try {
-            //PageX and PageY return the position of client's cursor from top left of screen
-            var x = !isTouchDevice() ? e.clientX : e.touches[0].pageX;
-            var y = !isTouchDevice() ? e.clientY : e.touches[0].pageY;
-      } catch (e) {}
-      //set left and top of div based on mouse position
+      var x = !isTouchDevice() ? e.pageX : e.touches[0].pageX;
+      var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
       sphere.style.left = x - 5 + "px";
       sphere.style.top = y - 5 + "px";
 };
@@ -28,4 +25,47 @@ document.addEventListener("mousemove", (e) => {
 //For touch
 document.addEventListener("touchmove", (e) => {
       move(e);
+});
+
+// Toggler de la navigation
+
+const btn = document.querySelector(".nav-toggler");
+const header = document.querySelector("header");
+
+document.addEventListener("click", (e) => {
+      if (e.target.closest(".nav-toggler")) {
+            btn.classList.toggle("toggle");
+            header.classList.toggle("active");
+      } else if (!e.target.closest(".nav-toggler")) {
+            btn.classList.remove("toggle");
+            header.classList.remove("active");
+      }
+});
+document.addEventListener("scroll", (f) => {
+      if (window.scrollY > 50) {
+            btn.classList.remove("toggle");
+            header.classList.remove("active");
+      }
+});
+
+// Test image width au scroll
+let lastScrollTop = 0;
+const scrollingText = document.querySelector(".scrolling_text p");
+
+window.addEventListener("scroll", () => {
+      const currentScrollTop = window.scrollY;
+
+      if (currentScrollTop > lastScrollTop) {
+            // Faites défiler vers le bas (défilement vers la droite)
+            scrollingText.style.transform = `translateX(-${
+                  currentScrollTop / 2
+            }px)`;
+      } else {
+            // Faites défiler vers le haut (défilement vers la gauche)
+            scrollingText.style.transform = `translateX(-${
+                  currentScrollTop / 2
+            }px)`;
+      }
+
+      lastScrollTop = currentScrollTop;
 });

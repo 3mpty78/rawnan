@@ -1,7 +1,6 @@
 #homescreen {
       position: relative;
       height: 100vh;
-      background: var(--white);
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
@@ -16,12 +15,14 @@
             justify-content: space-evenly;
 
             & h1 {
+                  font-family: charlotte;
                   position: relative;
                   font-size: 10em;
                   font-weight: lighter;
                   color: var(--black);
 
                   & span {
+                        font-weight: 700;
                         color: var(--accent);
 
                         &:hover {
@@ -38,20 +39,18 @@
             }
 
             & .image {
-                  width: 350px;
+                  position: relative;
+                  width: 20%;
                   height: 500px;
                   overflow: hidden;
-                  transition: 0.4s;
+                  transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1.25);
+                  background: url(../assets/img/Fwl-4-DX0AEFxBM.jpg) no-repeat
+                        top/cover;
+                  background-attachment: fixed;
+                  border-radius: 15px;
 
-                  & img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        transition: 0.4s ease-in-out;
-
-                        &:hover {
-                              transform: scale(1.1);
-                        }
+                  &:hover {
+                        width: 75%;
                   }
             }
       }
@@ -81,7 +80,8 @@
             height: 2px;
             border-radius: 50px;
             background: var(--accent);
-            transition: transform 0.3s ease-out, opacity 0.1s ease-out;
+            transition: transform 0.3s ease-out, opacity 0.1s ease-out,
+                  background-color 0.3s;
       }
 
       & .l1 {
@@ -100,12 +100,14 @@
 }
 .nav-toggler.toggle .l1 {
       transform: translateY(0) rotate(135deg);
+      background-color: var(--white);
 }
 .nav-toggler.toggle .l2 {
       opacity: 0;
 }
 .nav-toggler.toggle .l3 {
       transform: translateY(0) rotate(-135deg);
+      background-color: var(--white);
 }
 
 /* Header et navigation */
@@ -116,7 +118,6 @@ header {
       height: 100vh;
       margin-top: -100vh;
       transition: 0.6s cubic-bezier(0.77, 0.2, 0.05, 1);
-      /* backdrop-filter: blur(10px) brightness(0.8); */
       z-index: 5;
       padding: 0;
 
@@ -149,6 +150,13 @@ header {
                         width: 30px;
                         filter: invert(1);
                   }
+
+                  & h2 {
+                        text-wrap: nowrap;
+                        font-size: 1.5em;
+                        color: var(--white);
+                        font-weight: 500;
+                  }
             }
 
             & li {
@@ -163,12 +171,18 @@ header {
                         font-weight: 600;
                         letter-spacing: 5px;
                         color: var(--black);
+                        transition: 0.5s ease;
 
                         &:hover {
-                              font-style: italic;
                               font-weight: lighter;
                         }
                   }
             }
       }
 }
+
+.header.active {
+      margin-top: 0;
+}
+
+/* Keyframes & animations */

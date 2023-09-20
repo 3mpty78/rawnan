@@ -2,6 +2,7 @@
 @import "./node_modules/normalize.css/normalize.css";
 @import "./styles/variables.css";
 @import "./styles/home.css";
+@import "./styles/gallerie.css";
 
 /* Import des polices */
 @font-face {
@@ -12,13 +13,20 @@
       font-family: "cormorant";
       src: url(./assets/fonts/Cormorant.TTF);
 }
+@font-face {
+      font-family: "charlotte";
+      src: url(./assets/fonts/CHARLOTTE.OTF);
+}
 
 /* Styles généraux */
 * {
       margin: 0;
       user-select: none;
       scroll-behavior: smooth;
-      font-family: "cormorant";
+      font-family: "montserrat";
+}
+body {
+      background: var(--white);
 }
 
 /* Sphere du curseur */
@@ -32,6 +40,6 @@
       position: absolute;
       transform: translate(-50%, -50%);
       border-radius: 50px;
-      transition: 0.5s ease-out;
+      transition: 0.2s ease-out;
       pointer-events: none;
 }
