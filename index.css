@@ -1,1 +1,37 @@
+/* Import des fichiers de style */
 @import "./node_modules/normalize.css/normalize.css";
+@import "./styles/variables.css";
+@import "./styles/home.css";
+
+/* Import des polices */
+@font-face {
+      font-family: "montserrat";
+      src: url(./assets/fonts/montserrat.TTF);
+}
+@font-face {
+      font-family: "cormorant";
+      src: url(./assets/fonts/Cormorant.TTF);
+}
+
+/* Styles généraux */
+* {
+      margin: 0;
+      user-select: none;
+      scroll-behavior: smooth;
+      font-family: "cormorant";
+}
+
+/* Sphere du curseur */
+
+.circle {
+      width: 50px;
+      height: 50px;
+      border: 1px solid var(--accent);
+      backdrop-filter: hue-rotate(200deg);
+      z-index: 100;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      border-radius: 50px;
+      transition: 0.5s ease-out;
+      pointer-events: none;
+}
