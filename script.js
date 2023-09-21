@@ -1,6 +1,7 @@
 // Sphère du curseur
 
-let sphere = document.querySelector(".circle");
+let sphere = document.getElementById("sphere");
+let dot = document.getElementById("dot");
 //Detect touch device
 function isTouchDevice() {
       try {
@@ -17,6 +18,8 @@ const move = (e) => {
       var y = !isTouchDevice() ? e.pageY : e.touches[0].pageY;
       sphere.style.left = x - 5 + "px";
       sphere.style.top = y - 5 + "px";
+      dot.style.left = x - 5 + "px";
+      dot.style.top = y - 5 + "px";
 };
 //For mouse
 document.addEventListener("mousemove", (e) => {
@@ -54,18 +57,7 @@ const scrollingText = document.querySelector(".scrolling_text p");
 
 window.addEventListener("scroll", () => {
       const currentScrollTop = window.scrollY;
-
-      if (currentScrollTop > lastScrollTop) {
-            // Faites défiler vers le bas (défilement vers la droite)
-            scrollingText.style.transform = `translateX(-${
-                  currentScrollTop / 2
-            }px)`;
-      } else {
-            // Faites défiler vers le haut (défilement vers la gauche)
-            scrollingText.style.transform = `translateX(-${
-                  currentScrollTop / 2
-            }px)`;
-      }
+      scrollingText.style.transform = `translateX(-${currentScrollTop / 2}px)`;
 
       lastScrollTop = currentScrollTop;
 });

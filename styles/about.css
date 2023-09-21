@@ -1,0 +1,53 @@
+#about {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      justify-content: center;
+
+      & .container {
+            width: 75%;
+            height: 75%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            & img {
+                  width: 400px;
+                  height: 550px;
+                  object-fit: cover;
+            }
+            & .presentation {
+                  position: relative;
+                  width: 60%;
+                  height: 100%;
+                  padding: 15px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-end;
+                  justify-content: flex-end;
+
+                  & h2 {
+                        font-family: "cormorant";
+                        margin: 25px 0;
+                        text-wrap: nowrap;
+                        font-size: 4em;
+                        color: var(--black);
+                        font-weight: 500;
+
+                        & span {
+                              font-family: "cormorant";
+                              color: var(--accent);
+                        }
+                  }
+
+                  & p {
+                        font-size: 1.5em;
+                        line-height: 1.5;
+                        text-align: justify;
+                  }
+            }
+      }
+}
