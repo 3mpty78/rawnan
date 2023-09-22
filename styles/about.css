@@ -5,6 +5,39 @@
       flex-flow: column nowrap;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
+
+      & .circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: -250px;
+            background: url(../assets/icons/sun-svgrepo-com.svg) no-repeat
+                  center/cover;
+            animation: rotate 15s linear infinite;
+      }
+      & .contact-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            padding: 20px 10px;
+            top: -50px;
+            left: -50px;
+            border-radius: 50%;
+            font-family: cormorant;
+            color: var(--accent);
+            font-size: 25px;
+
+            &:hover {
+                  cursor: pointer;
+            }
+      }
 
       & .container {
             width: 75%;
@@ -49,5 +82,14 @@
                         text-align: justify;
                   }
             }
+      }
+}
+
+@keyframes rotate {
+      from {
+            transform: rotate(0);
+      }
+      to {
+            transform: rotate(360deg);
       }
 }
