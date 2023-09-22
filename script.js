@@ -53,11 +53,34 @@ document.addEventListener("scroll", (f) => {
 
 // Test image width au scroll
 let lastScrollTop = 0;
-const scrollingText = document.querySelector(".scrolling_text p");
+const scrollingText = document.querySelectorAll(".scrolling_text p");
 
 window.addEventListener("scroll", () => {
       const currentScrollTop = window.scrollY;
-      scrollingText.style.transform = `translateX(-${currentScrollTop / 2}px)`;
+
+      scrollingText.forEach((element) => {
+            element.style.transform = `translateX(-${currentScrollTop / 2}px)`;
+      });
 
       lastScrollTop = currentScrollTop;
 });
+
+// Agrandissement de la sphère du cursor au hover
+
+const image = document.querySelector(".image");
+const aboutPicture = document.getElementById("aboutPicture");
+
+image.addEventListener("mouseenter", () => {
+      sphere.classList.add("onImage");
+});
+image.addEventListener("mouseleave", () => {
+      sphere.classList.remove("onImage");
+});
+aboutPicture.addEventListener("mouseenter", () => {
+      sphere.classList.add("onImage");
+});
+aboutPicture.addEventListener("mouseleave", () => {
+      sphere.classList.remove("onImage");
+});
+
+// tests
