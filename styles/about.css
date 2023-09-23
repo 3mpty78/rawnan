@@ -14,10 +14,10 @@
             width: 400px;
             height: 400px;
             position: absolute;
-            top: -250px;
+            top: -200px;
             background: url(../assets/icons/sun-svgrepo-com.svg) no-repeat
                   center/cover;
-            animation: rotate 15s linear infinite;
+            transition: 0.5s ease-out;
       }
       & .contact-text {
             display: flex;
