@@ -83,7 +83,7 @@ aboutPicture.addEventListener("mouseleave", () => {
       sphere.classList.remove("onImage");
 });
 
-// Rotation soleil au scroll
+// Rotation du soleil au scroll
 
 const sun = document.querySelector(".circle");
 

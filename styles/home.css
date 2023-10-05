@@ -45,7 +45,7 @@
             }
 
             & .image {
-                  width: 30%;
+                  width: 66%;
                   height: 600px;
                   overflow: hidden;
                   transition: 0.5s cubic-bezier(0.77, 0, 0.175, 1.25);
